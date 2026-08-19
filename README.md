@@ -2,8 +2,6 @@
 
 A minimal, AI-powered username generator. Describe what you want and get relevant, memorable username ideas in seconds.
 
-**Note:** This is a local-only tool. Run `npm start` and open `http://localhost:3000`.
-
 ![Username Studio Preview](Username-generator.png)
 
 ## What It Does
