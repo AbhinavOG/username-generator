@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Username Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <!-- Background effects -->
+  <div class="bg-effect bg-glow-1"></div>
+  <div class="bg-effect bg-glow-2"></div>
+  <div class="bg-grid"></div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-inner">
+      <div class="brand">
+        <div class="brand-icon">
+          <span class="sparkle">✦</span>
+        </div>
+        <span class="brand-text">Username<span class="brand-secondary">Studio</span></span>
+      </div>
+      <button id="theme-toggle" class="theme-toggle" aria-label="Toggle light mode">
+        <span class="theme-icon">☀️</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <main class="main">
+    <div class="hero">
+      <!-- Status pill -->
+      <div class="status-pill">
+        <span class="pulse-dot"></span>
+        <span>Simple username generation</span>
+      </div>
+
+      <!-- Headline -->
+      <h1 class="hero-title">
+        Find a username <span class="gradient-text">that fits you.</span>
+      </h1>
+
+      <!-- Description -->
+      <p class="hero-description">
+        Tell us what you're looking for in plain English. Get relevant, memorable username ideas in seconds.
+      </p>
+
+      <!-- Prompt input -->
+      <div class="prompt-container" id="prompt-container">
+        <textarea
+          id="prompt-input"
+          class="prompt-textarea"
+          placeholder="e.g. I need a professional GitHub username, short and memorable..."
+          rows="1"
+          minlength="3"
+          maxlength="500"
+          required
+        ></textarea>
+        <div class="prompt-actions">
+          <span class="hint-text">Describe your name, style, platform or requirements</span>
+          <button class="btn btn-generate" id="generate-btn" disabled>
+            ✦ Generate usernames
+          </button>
+        </div>
+      </div>
+
+      <!-- Quick prompt chips -->
+      <div class="chips">
+        <button class="chip" data-prompt="Professional username">Professional</button>
+        <button class="chip" data-prompt="Gaming username">Gaming</button>
+        <button class="chip" data-prompt="Developer username">Developer</button>
+        <button class="chip" data-prompt="Business username">Business</button>
+        <button class="chip" data-prompt="Short and memorable username">Use everywhere</button>
+        <button class="chip" data-prompt="Short and simple username">Short & simple</button>
+      </div>
+    </div>
+
+    <!-- Results section -->
+    <div class="results-section" id="results-section">
+      <div class="results-header">
+        <h2 class="results-title">Your username ideas</h2>
+        <span class="results-count" id="results-count"></span>
+      </div>
+      <div class="username-grid" id="username-grid"></div>
+      <div class="results-actions">
+        <button class="btn btn-secondary" id="generate-again-btn">
+          Generate Again
+        </button>
+      </div>
+    </div>
+
+    <!-- Loading state -->
+    <div class="loading-state" id="loading-state">
+      <div class="spinner"></div>
+      <p class="loading-text">Generating usernames...</p>
+    </div>
+
+    <!-- Error state -->
+    <div class="error-state" id="error-state">
+      <p class="error-text" id="error-message"></p>
+      <button class="btn btn-secondary" id="retry-btn">Try Again</button>
+    </div>
+  </main>
+
+  <!-- Empty state hint -->
+  <div class="empty-hint" id="empty-hint">
+    <p>Enter your request above to get started.</p>
+  </div>
+
+  <script src="/app.js"></script>
+</body>
+</html>
