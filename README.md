@@ -1,47 +1,59 @@
-# Username Generator
+# <img src="Username-generator.png" width="40" align="left" style="margin: 0 10px 0 0;"/> Username Generator
 
-A minimal, AI-powered username generator. Describe what you want and get relevant, memorable username ideas in seconds.
+> A minimal, AI-powered username generator.
 
-**Note:** This is a local-only tool. Run `npm start` and open `http://localhost:3000`.
+Describe what you want — get 20 relevant, memorable username ideas in seconds.
 
-![Username Studio Preview](Username-generator.png)
+**Local-only tool.** Run `npm start` → open `http://localhost:3000`
 
-## What It Does
+---
 
-Struggling to come up with a good username? Just tell the generator what you need in plain English:
+## Quick Example
 
-> "Professional GitHub username containing Alex, without numbers"
+```
+You: "Professional GitHub username containing Alex, no numbers"
 
-> "Gaming username with Shadow"
+Bot: alexdev, alexcoder, alexlabs, alexstudio, alexworks, alexhub,
+     alexforge, alexcode, alextech, alexbuild, alexify, alexio,
+     alexone, alexcore, alexpro, alexmate, alexview, alexspace,
+     alexfield, alexpoint
+```
 
-> "Short developer username, no underscores"
-
-And get 20 curated suggestions instantly.
+---
 
 ## Features
 
-- **Natural language input** — Describe exactly what you want, no forms or dropdowns
-- **Smart generation** — Respects your constraints (no numbers, specific words, style preferences)
-- **One-click copy** — Copy any username instantly with "Copied ✓" feedback
-- **Generate again** — Get a fresh batch using the same prompt with one click
-- **Dark mode** — Premium dark-first design with light mode support
-- **Responsive** — Works beautifully on mobile, tablet, and desktop
-- **Privacy-first** — No accounts, no tracking, no saved history
+| ✨ | Natural language input |
+|---|---|
+| Just type what you want — no dropdowns or complicated forms |
 
-## Tech Stack
+| 🎯 | Smart constraint handling |
+|---|---|
+| Respects "no numbers", specific words, style, length, and more |
 
-- **Frontend**: Vanilla HTML, CSS, JavaScript (no frameworks)
-- **Backend**: Node.js + Express
-- **AI**: Integrates with [Claude Code Router (CCR)](https://github.com/musistudio/claude-code-router) for secure API access
+| 📋 | One-click copy |
+|---|---|
+| Copy any suggestion instantly with visual "Copied" feedback |
 
-## Getting Started
+| 🔁 | Generate again |
+|---|---|
+| Get a fresh batch with the same prompt — no need to retype |
 
-### Prerequisites
+| 🌙 | Dark-first design |
+|---|---|
+| Premium dark UI with optional light mode |
 
-- Node.js 18+
-- CCR (claude-code-router) running locally
+| 📱 | Fully responsive |
+|---|---|
+| Looks great on mobile, tablet, and desktop |
 
-### Installation
+| 🔒 | Privacy-first |
+|---|---|
+| No accounts, no tracking, no history saved |
+
+---
+
+## Quick Start
 
 ```bash
 git clone https://github.com/AbhinavOG/username-generator.git
@@ -52,50 +64,81 @@ npm start
 
 Open `http://localhost:3000` in your browser.
 
+---
+
+## How It Works
+
+```
+┌─────────┐    ┌───────────┐    ┌──────────┐    ┌────────┐
+│  You    │───▶│  Browser  │───▶│  Express │───▶│  CCR   │
+│         │    │           │    │  Server  │    │  Proxy │
+└─────────┘    └───────────┘    └──────────┘    └────────┘
+                  │                 │            │
+                  │ Renders UI      │ Validates  │ AI
+                  │ & manages state │ response   │
+                  ▼                 ▼            ▼
+              ┌──────────────────────────────────────┐
+              │      20 Username Suggestions         │
+              │    Copy • Generate Again • Regenerate│
+              └──────────────────────────────────────┘
+```
+
+---
+
+## Tech Stack
+
+```
+┌────────────┐     ┌────────────┐     ┌────────────┐
+│   Vanilla   │────▶│  Node.js   │────▶│    CCR     │
+│  HTML/CSS/JS│     │  Express   │     │  Gateway   │
+└────────────┘     └────────────┘     └────────────┘
+   (no build)       (tiny footprint)   (no keys hardcoded)
+```
+
+---
+
 ## Configuration
 
-The app reads these environment variables (automatically available when running within CCR):
+All credentials are loaded from your CCR environment at runtime — nothing hardcoded.
 
 | Variable | Description | Default |
 |----------|-------------|---------|
 | `ANTHROPIC_BASE_URL` | CCR proxy URL | `http://127.0.0.1:3456` |
-| `CCR_CORE_GATEWAY_AUTH_TOKEN` | CCR gateway auth token | _(from CCR)_ |
-| `CCR_REMOTE_SYNC_API_KEY_HELPER` | Path to CCR key helper script | _(from CCR)_ |
-| `AI_MODEL` | AI model to use | `OpenRouter/cohere/north-mini-code:free` |
+| `CCR_CORE_GATEWAY_AUTH_TOKEN` | Gateway token | *(from CCR)* |
+| `CCR_REMOTE_SYNC_API_KEY_HELPER` | Key helper script | *(from CCR)* |
+| `AI_MODEL` | AI model | `OpenRouter/cohere/north-mini-code:free` |
 | `PORT` | Server port | `3000` |
 
-No API keys are hardcoded — all credentials are loaded at runtime.
+---
 
-## How It Works
+## API Reference
 
-1. User describes their desired username requirements
-2. The backend forwards the request to CCR's gateway (not the frontend)
-3. The AI generates 20 username suggestions as structured JSON
-4. The backend validates the response (dedupes, filters invalid entries)
-5. Results are displayed with one-click copy buttons
+```
+POST /api/generate
+Content-Type: application/json
 
-## API
-
-`POST /api/generate`
-
-```json
-{
-  "prompt": "Professional GitHub username containing Alex, no numbers"
-}
+{ "prompt": "Gaming username with Shadow" }
 ```
 
-Response:
 ```json
 {
   "usernames": [
-    "alexdev",
-    "alexcoder",
-    "alexlabs",
+    "ShadowBlade",
+    "ShadowWolf",
+    "ShadowStrike",
     "..."
   ]
 }
 ```
 
+---
+
+## Screenshots
+
+![Username Generator Preview](Username-generator.png)
+
+---
+
 ## License
 
-MIT
+MIT — use it, fork it, make it your own.
