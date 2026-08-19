@@ -1,59 +1,38 @@
-# <img src="Username-generator.png" width="40" align="left" style="margin: 0 10px 0 0;"/> Username Generator
+<div align="center">
 
-> A minimal, AI-powered username generator.
+<img src="Username-generator.png" width="120"/>
 
-Describe what you want — get 20 relevant, memorable username ideas in seconds.
+# Username Generator
 
-**Local-only tool.** Run `npm start` → open `http://localhost:3000`
+**Describe what you want. Get usernames you'll actually use.**
 
----
-
-## Quick Example
-
-```
-You: "Professional GitHub username containing Alex, no numbers"
-
-Bot: alexdev, alexcoder, alexlabs, alexstudio, alexworks, alexhub,
-     alexforge, alexcode, alextech, alexbuild, alexify, alexio,
-     alexone, alexcore, alexpro, alexmate, alexview, alexspace,
-     alexfield, alexpoint
-```
+[![Local Only](https://img.shields.io/badge/deploy-local-black?style=flat-square)&nbsp;
+[![Node.js](https://img.shields.io/badge/runtime-node%2018+-339933?style=flat-square)&nbsp;
+</div>
 
 ---
 
-## Features
+<br/>
 
-| ✨ | Natural language input |
-|---|---|
-| Just type what you want — no dropdowns or complicated forms |
+## ✨ What It Does
 
-| 🎯 | Smart constraint handling |
-|---|---|
-| Respects "no numbers", specific words, style, length, and more |
+Stuck on a username? Stop overthinking it.
 
-| 📋 | One-click copy |
-|---|---|
-| Copy any suggestion instantly with visual "Copied" feedback |
+Just type what you're after — the generator understands your intent and produces 20 clean, relevant suggestions instantly.
 
-| 🔁 | Generate again |
-|---|---|
-| Get a fresh batch with the same prompt — no need to retype |
+**Examples:**
 
-| 🌙 | Dark-first design |
-|---|---|
-| Premium dark UI with optional light mode |
+> • *"Professional GitHub username containing Alex, no numbers"*
+>
+> • *"Gaming username with Shadow"*
+>
+> • *"Short developer username, no underscores"*
 
-| 📱 | Fully responsive |
-|---|---|
-| Looks great on mobile, tablet, and desktop |
+That's it. No forms. No dropdowns. Just ask in plain English.
 
-| 🔒 | Privacy-first |
-|---|---|
-| No accounts, no tracking, no history saved |
+<br/>
 
----
-
-## Quick Start
+## 🚀 Quick Start
 
 ```bash
 git clone https://github.com/AbhinavOG/username-generator.git
@@ -62,83 +41,136 @@ npm install
 npm start
 ```
 
-Open `http://localhost:3000` in your browser.
+Then open <http://localhost:3000> — that's it.
+
+<br/>
 
 ---
 
-## How It Works
+<div align="center">
 
-```
-┌─────────┐    ┌───────────┐    ┌──────────┐    ┌────────┐
-│  You    │───▶│  Browser  │───▶│  Express │───▶│  CCR   │
-│         │    │           │    │  Server  │    │  Proxy │
-└─────────┘    └───────────┘    └──────────┘    └────────┘
-                  │                 │            │
-                  │ Renders UI      │ Validates  │ AI
-                  │ & manages state │ response   │
-                  ▼                 ▼            ▼
-              ┌──────────────────────────────────────┐
-              │      20 Username Suggestions         │
-              │    Copy • Generate Again • Regenerate│
-              └──────────────────────────────────────┘
-```
+<img src="Username-generator.png" width="600" style="border-radius: 12px;"/>
+
+</div>
+
+<br/>
 
 ---
 
-## Tech Stack
+## 🎯 Features
 
-```
-┌────────────┐     ┌────────────┐     ┌────────────┐
-│   Vanilla   │────▶│  Node.js   │────▶│    CCR     │
-│  HTML/CSS/JS│     │  Express   │     │  Gateway   │
-└────────────┘     └────────────┘     └────────────┘
-   (no build)       (tiny footprint)   (no keys hardcoded)
-```
+<br/>
+
+<div align="center">
+
+| 🧠 **Smart** | Respects your constraints — "no numbers", specific words, style & more |
+|:-----------:|:---------------------------------------------------------------|
+| ⚡ **Fast** | 20 suggestions generated in seconds, not minutes |
+| 📋 **One click** | Copy to clipboard with instant visual feedback |
+| 🔁 **Regenerate** | Fresh batch with the same prompt — no retyping |
+| 🌙 **Dark first** | Premium dark UI with optional light mode |
+| 📱 **Responsive** | Looks great from phone to desktop |
+| 🔒 **Privacy** | Local only. No accounts. No tracking. No API keys in the client. |
+
+</div>
+
+<br/>
 
 ---
 
-## Configuration
+## 🏗️ How It Works
 
-All credentials are loaded from your CCR environment at runtime — nothing hardcoded.
+```
+
+                           ┌─────────────────┐
+                           │   Your Prompt   │
+                           └────────┬────────┘
+                                    │
+                                    ▼
+┌──────────┐     ┌────────────┐    │    ┌──────────┐
+│   CSS    │────▶│   Vanilla  │◀───┴───▶│  Node.js  │
+│  Styles  │     │ JavaScript │         │  Express  │
+└──────────┘     └──────┬─────┘         └─────┬─────┘
+                         │                     │
+                         ▼                     │
+              ┌────────────────────┐            │
+              │   Prompt Box UI    │            │
+              │  • Type your need  │            │
+              │  • Quick chips     │            │
+              │  • Generate button │            │
+              └────────┬───────────┘            │
+                       │                        │
+                       ▼                        │
+              ┌────────────────────┐            │
+              │ Loading Spinner   │            │
+              └────────┬───────────┘            │
+                       │                        │
+                       ▼                        │
+              ┌────────────────────┐    ┌───────┴─────────┐
+              │    20 Username     │◀───┤  CCR API Call   │
+              │    Suggestions     │    │  (secure)       │
+              └────────┬───────────┘    └─────────────────┘
+                       │
+                       ▼
+              ┌────────────────────┐
+              │ Copy • Generate    │
+              │      Again          │
+              └────────────────────┘
+
+```
+
+<br/>
+
+## 🛠️ Configuration
+
+All credentials come from your environment — nothing hardcoded in the code.
 
 | Variable | Description | Default |
-|----------|-------------|---------|
+|---|---|---|
 | `ANTHROPIC_BASE_URL` | CCR proxy URL | `http://127.0.0.1:3456` |
-| `CCR_CORE_GATEWAY_AUTH_TOKEN` | Gateway token | *(from CCR)* |
-| `CCR_REMOTE_SYNC_API_KEY_HELPER` | Key helper script | *(from CCR)* |
-| `AI_MODEL` | AI model | `OpenRouter/cohere/north-mini-code:free` |
-| `PORT` | Server port | `3000` |
+| `CCR_CORE_GATEWAY_AUTH_TOKEN` | Gateway auth token | _(from CCR)_ |
+| `CCR_REMOTE_SYNC_API_KEY_HELPER` | Path to key helper script | _(from CCR)_ |
+| `AI_MODEL` | AI model name | `OpenRouter/cohere/north-mini-code:free` |
+| `PORT` | Express server port | `3000` |
+
+<br/>
 
 ---
 
-## API Reference
+## 📡 API
 
-```
+```http
 POST /api/generate
 Content-Type: application/json
 
-{ "prompt": "Gaming username with Shadow" }
+{
+  "prompt": "Professional GitHub username containing Alex, no numbers"
+}
 ```
+
+**Response:**
 
 ```json
 {
   "usernames": [
-    "ShadowBlade",
-    "ShadowWolf",
-    "ShadowStrike",
-    "..."
+    "alexdev",
+    "alexcoder",
+    "alexlabs",
+    "alexstudio",
+    "alexworks",
+    "…"
   ]
 }
 ```
 
----
-
-## Screenshots
-
-![Username Generator Preview](Username-generator.png)
+<br/>
 
 ---
 
-## License
+<div align="center">
 
-MIT — use it, fork it, make it your own.
+Made with ❤️ using vanilla web tech
+
+MIT License © 2025
+
+</div>
