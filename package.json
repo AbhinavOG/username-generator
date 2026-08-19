@@ -1,5 +1,5 @@
 {
-  "name": "username-generator",
+  "name": "username-studio",
   "version": "1.0.0",
   "description": "Minimal AI-powered username generator",
   "main": "server.js",

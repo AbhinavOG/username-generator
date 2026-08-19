@@ -6,6 +6,8 @@ A minimal, AI-powered username generator. Describe what you want and get relevan
 
 ![Username Studio Preview](https://i.imgur.com/placeholder.png)
 
+![Username Studio Preview](https://i.imgur.com/placeholder.png)
+
 ## What It Does
 
 Struggling to come up with a good username? Just tell Username Studio what you need in plain English:
