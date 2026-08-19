@@ -4,9 +4,7 @@ A minimal, AI-powered username generator. Describe what you want and get relevan
 
 🌐 **Live Demo:** [https://username-studio.vercel.app](https://username-studio.vercel.app)
 
-![Username Studio Preview](https://i.imgur.com/placeholder.png)
-
-![Username Studio Preview](https://i.imgur.com/placeholder.png)
+![Username Studio Preview](Username-generator.png)
 
 ## What It Does
 
