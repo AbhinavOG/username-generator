@@ -1,14 +1,14 @@
-# Username Studio
+# Username Generator
 
 A minimal, AI-powered username generator. Describe what you want and get relevant, memorable username ideas in seconds.
 
-🌐 **Live Demo:** [https://username-studio.vercel.app](https://username-studio.vercel.app)
+**Note:** This is a local-only tool. Run `npm start` and open `http://localhost:3000`.
 
 ![Username Studio Preview](Username-generator.png)
 
 ## What It Does
 
-Struggling to come up with a good username? Just tell Username Studio what you need in plain English:
+Struggling to come up with a good username? Just tell the generator what you need in plain English:
 
 > "Professional GitHub username containing Alex, without numbers"
 
